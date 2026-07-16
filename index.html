@@ -180,6 +180,16 @@
     .comp-q { background: var(--white); border: 1px solid #c4b5fd; border-left: 4px solid var(--purple); border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; }
     .comp-q .q-text { color: var(--purple); }
 
+    /* ---- PREGUNTAS COMPACT ---- */
+    .qc-item { display: flex; gap: 14px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--amber); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+    .qc-item.role { border-left-color: var(--teal); }
+    .qc-num { font-size: 22px; font-weight: 900; color: #e2e8f0; flex-shrink: 0; width: 26px; text-align: center; line-height: 1; margin-top: 2px; }
+    .qc-body { flex: 1; }
+    .qc-q { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 5px; line-height: 1.45; }
+    .qc-why { font-size: 12px; color: var(--sub); line-height: 1.6; }
+    .qc-why strong { color: var(--text); font-weight: 700; }
+    .qc-data { display: inline-block; margin-top: 7px; font-size: 10.5px; color: var(--sub2); background: var(--bg); padding: 2px 8px; border-radius: 4px; }
+
     /* ---- PHASE SEPARATOR ---- */
     .phase-sep { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--sub2); padding: 6px 0 6px; margin: 16px 0 10px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
     .phase-sep::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -1001,80 +1011,83 @@
       </div>
     </div>
 
-    <!-- Bloque 1 -->
-    <div class="q-category">Bloque 1 — Los 79,000 pending y asignación de leads</div>
-
-    <div class="q-item">
-      <div class="q-text">1. ¿Cuánto dura hoy el ciclo de venta completo — desde el primer contacto hasta la entrega del vehículo? ¿Cuál es el promedio por ciudad?</div>
-      <div class="q-why"><strong>Por qué es crítica:</strong> Con ~5 meses restantes del año y una meta de 1,000+ entregas/mes, el ciclo define cuántas de las solicitudes activas en pipeline (7,111 aprobadas por ingresos + 605 en contrato/entrega) van a convertir antes de diciembre. Si el ciclo es largo, el plan de acción de los próximos 30 días tiene que priorizar <strong>reactivar leads que ya están avanzados</strong> sobre abrir nuevos. También es clave para dimensionar si el equipo actual puede cumplir la meta o se necesita contratar.</div>
-      <div class="q-data">CSV: 605 en contrato/entrega · 7,111 ever approved · meta EOY: 15,000 vehículos (hoy ~10,000) → 5,000 unidades en 5 meses = 1,000/mes</div>
+    <!-- Preguntas compact -->
+    <div class="qc-item">
+      <div class="qc-num">1</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Cuánto dura el ciclo de venta completo — primer contacto a entrega? ¿Promedio por ciudad?</div>
+        <div class="qc-why">Determina cuántas de las solicitudes activas convierten antes de diciembre. Si el ciclo es largo, el plan tiene que enfocarse en los <strong>7,111 aprobados actuales</strong>, no en captar leads nuevos.</div>
+        <span class="qc-data">605 en contrato/entrega · meta: 5,000 vehículos en 5 meses</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">2. Los 79,000 leads en pending — ¿están asignados a ejecutivos específicos o son un pool compartido sin dueño?</div>
-      <div class="q-why"><strong>Por qué:</strong> Si no están asignados, el problema es de proceso — nadie es responsable. Si están asignados pero sin contactar, es capacidad o herramienta. La solución es completamente diferente en cada caso y cambia la propuesta de estructura del equipo.</div>
-      <div class="q-data">CSV: 79,469 pending · 48.4% con +90 días sin contacto · mediana 86 días</div>
+    <div class="qc-item">
+      <div class="qc-num">2</div>
+      <div class="qc-body">
+        <div class="qc-q">Los 79,000 en pending — ¿tienen ejecutivo asignado o son un pool sin dueño? ¿Cómo se asigna un lead nuevo?</div>
+        <div class="qc-why">Si no hay dueño, el problema es proceso. Si hay dueño pero no contacta, es capacidad. Son dos soluciones completamente distintas. La asignación también explica por qué <strong>MTY convierte 8.4%</strong> y CDMX/EDOMEX solo 0.2%.</div>
+        <span class="qc-data">79,469 en pending · mediana 86 días sin contacto</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">3. ¿Cómo se asigna un lead nuevo al equipo — por orden de llegada (FIFO), por ciudad, por disponibilidad del ejecutivo, o manual?</div>
-      <div class="q-why"><strong>Por qué:</strong> FIFO (first-in, first-out) = el primer lead que llegó es el primero en ser atendido, como una fila. Ignora calidad y urgencia. Un lead de hace 3 meses se atiende antes que uno de hace 2 días. Si la asignación es FIFO puro, los leads más recientes (y más calientes) esperan detrás de leads viejos y fríos.</div>
-      <div class="q-data">CSV: MTY convierte 8.4% vs CDMX/EDOMEX 0.2% — la asignación puede estar fragmentando la efectividad por ciudad</div>
+    <div class="qc-item">
+      <div class="qc-num">3</div>
+      <div class="qc-body">
+        <div class="qc-q">El canal EXTERNAL_C8 — ¿qué es? ¿Sigue activo? ¿Se paga por lead?</div>
+        <div class="qc-why">Genera 15,732 solicitudes con solo 0.25% de conversión. Si se paga CPA (costo por lead), es el peor ROI del funnel — el equipo gasta tiempo en leads que no califican en vez de contactar los 79K pending.</div>
+        <span class="qc-data">39 entregas / 15,732 solicitudes · ingresos mediana $22K vs $54K del canal propio</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">4. ¿Tienen un SLA de tiempo máximo para hacer el primer contacto a un lead nuevo?</div>
-      <div class="q-why"><strong>Por qué:</strong> Estudios en ventas B2C muestran que la probabilidad de contactar a un lead baja 10× después de 5 minutos del primer intento. Sin SLA de contacto (&lt;24h mínimo), los leads frescos se enfrían antes de ser llamados. Solo el 33.7% de los leads del CSV se actualizan el mismo día de creación.</div>
+    <div class="qc-item">
+      <div class="qc-num">4</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Cuál es la estructura del equipo hoy — hay managers por ciudad, especialización por etapa, o todos hacen todo?</div>
+        <div class="qc-why">Sergio sabe esto mejor que nadie. Define la propuesta de estructura para la presentación. Si todos hacen todo (prospección + cierre + back-office), hay oportunidad clara de especializar sin contratar.</div>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">5. El canal EXTERNAL_C8 — ¿qué es exactamente? ¿Sigue activo? ¿Se paga CPA por esos leads?</div>
-      <div class="q-why"><strong>Por qué:</strong> 15,732 solicitudes con 0.25% de conversión y leads con ingresos mediana de $22K vs $54K del canal propio. Si se paga por lead, es el peor ROI del funnel. Necesito entender si es canal pagado o alianza para proponer si pausarlo o agregar filtro de entrada.</div>
-      <div class="q-data">CSV: EXTERNAL_C8 · 39/15,732 · rechazo por ingresos 31.4% vs 12.5% canal OCN</div>
+    <div class="qc-item">
+      <div class="qc-num">5</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Cuánto entrega el mejor ejecutivo vs el peor? ¿A qué se atribuye esa brecha?</div>
+        <div class="qc-why">Los datos muestran una brecha brutal entre ciudades. Si el mejor hace 5× más que el peor, replicar ese modelo es la palanca más rápida — más que contratar. Sergio tiene el contexto humano que el CSV no da.</div>
+        <span class="qc-data">MTY 8.4% · TIJ 6.6% · GDL 3.6% · MER 1.2% · CDMX/EDOMEX 0.2%</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">6. Los 1,250 leads en "no_contact" (lost por no contestar) — ¿alguien los retoma o quedan abandonados?</div>
-      <div class="q-why"><strong>Por qué:</strong> "No contact" no es rechazo — es que nunca contestaron el teléfono. Mostraron interés (llenaron el formulario). Con canal diferente (WhatsApp, otro horario, SMS) muchos contestarían. Es un banco de oportunidad sin explotar.</div>
-      <div class="q-data">CSV: 1,250 lost por no_contact (29.3% de los lost) · 172 por inactividad +60 días</div>
+    <div class="qc-item">
+      <div class="qc-num">6</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Hay prácticas de coaching hoy — escuchas de llamadas, revisión de pipeline, acompañamiento en campo?</div>
+        <div class="qc-why">Uno de los 3 entregables del case es el plan de coaching de 30 días. Si ya existe algo, lo mejoro. Si no hay nada, necesito entender por qué — y eso cambia la propuesta.</div>
+      </div>
     </div>
 
-    <!-- Bloque 2 -->
-    <div class="q-category">Bloque 2 — Equipo y proceso comercial</div>
-
-    <div class="q-item">
-      <div class="q-text">7. ¿Cuál es la estructura del equipo hoy — hay managers por ciudad, hay especialización por etapa (perfilamiento / cierre / back-office), o todos hacen todo de principio a fin?</div>
-      <div class="q-why"><strong>Por qué:</strong> Define completamente la propuesta de estructura del equipo para la presentación. Si ya hay especialización, mejoro lo existente. Si todos hacen todo, hay oportunidad de separar roles para aumentar conversión en cada etapa sin contratar más gente.</div>
+    <div class="qc-item">
+      <div class="qc-num">7</div>
+      <div class="qc-body">
+        <div class="qc-q">La visita domiciliaria — ¿la hace el ejecutivo o un equipo separado? ¿Cuánto tarda desde que se agenda?</div>
+        <div class="qc-why">Si el ejecutivo comercial hace la visita, usa horas que podría dedicar a contactar los 79K pending. Es el filtro más caro en tiempo y definir quién lo opera cambia toda la propuesta de flujo.</div>
+        <span class="qc-data">663 agendadas · 244 rechazadas · 36.7% de tasa de rechazo en visita</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">8. ¿Cuál es la diferencia real en entregas entre el mejor y el peor ejecutivo hoy? ¿A qué se atribuye esa brecha?</div>
-      <div class="q-why"><strong>Por qué:</strong> La diferencia entre MTY (8.4%) y CDMX/EDOMEX (0.2%) sugiere una brecha enorme. Si el mejor ejecutivo convierte 5× más que el peor, el primer paso no es contratar más — es entender qué hace diferente y replicarlo.</div>
+    <div class="qc-item">
+      <div class="qc-num">8</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Hay algún programa de referidos hoy — incentivo para que un conductor activo traiga a otro?</div>
+        <div class="qc-why">Los referidos convierten <strong>4.1× mejor</strong> pero son solo el 4.3% del volumen. Si no hay programa, es la palanca de mayor ROI con la menor inversión. Un bono por referido exitoso puede mover la aguja en semanas.</div>
+        <span class="qc-data">6.41% conv referidos vs 1.57% sin referido · 321/5,010 vs 1,760/112,391</span>
+      </div>
     </div>
 
-    <div class="q-item">
-      <div class="q-text">9. ¿Hay prácticas de coaching hoy — escuchas de llamadas, revisión de pipeline semanal, acompañamiento en campo?</div>
-      <div class="q-why"><strong>Por qué:</strong> El plan de coaching de 30 días es uno de los 3 entregables del assessment. Si ya hay algo funcionando, lo mejoro. Si no hay nada, lo construyo — y la respuesta de Sergio explica por qué no existe.</div>
-    </div>
-
-    <div class="q-item">
-      <div class="q-text">10. La visita domiciliaria — ¿la hace el ejecutivo comercial o un equipo separado? ¿Cuánto tiempo tarda desde que se agenda hasta que ocurre?</div>
-      <div class="q-why"><strong>Por qué:</strong> Es el filtro más costoso en tiempo y dinero. Si el ejecutivo comercial hace la visita, usa horas que podría dedicar a contactar nuevos leads. Si es un equipo separado, el cuello puede estar en la coordinación o la capacidad de ese equipo.</div>
-      <div class="q-data">CSV: 663 scheduled · 76 aprobados · 244 rechazados (36.7% de rechazo en visita)</div>
-    </div>
-
-    <div class="q-item">
-      <div class="q-text">11. ¿Tienen algún programa de referidos hoy — incentivo para que un conductor activo traiga a otro conductor?</div>
-      <div class="q-why"><strong>Por qué:</strong> Mayor oportunidad sin explotar del funnel. Referidos convierten 4.1× mejor pero son solo el 4.3% del volumen. Si no hay programa, es la palanca de mayor ROI con la menor inversión.</div>
-      <div class="q-data">CSV: con referido = 6.41% (321/5,010) · sin referido = 1.57% (1,760/112,391)</div>
-    </div>
-
-    <!-- Bloque 3 — El rol -->
-    <div class="q-category" style="color:var(--teal);">Bloque 3 — El rol</div>
-
-    <div class="q-item role">
-      <div class="q-text">12. Si entro el lunes — ¿cuál es el primer problema concreto que querrías que atacara en los primeros 30 días?</div>
-      <div class="q-why"><strong>Por qué:</strong> La respuesta de Sergio define las prioridades reales del rol, que pueden diferir del case study. Si nombra el mismo cuello que identifiqué en el CSV (los 79K pending), valida el análisis en tiempo real — y es el mejor cierre de la sesión.</div>
+    <div class="qc-item role" style="border-top:2px dashed var(--teal);margin-top:20px;">
+      <div class="qc-num" style="color:var(--teal);">→</div>
+      <div class="qc-body">
+        <div class="qc-q" style="color:var(--teal);">Si entro el lunes — ¿cuál es el primer problema concreto que querrías que atacara en los primeros 30 días?</div>
+        <div class="qc-why">Cierre de sesión. La respuesta de Sergio define las prioridades reales del rol. Si nombra los 79K pending, valida el análisis del CSV en vivo.</div>
+      </div>
     </div>
 
   </div>
@@ -1088,29 +1101,25 @@
     <div class="callout blue" style="margin-bottom:16px;">
       <div class="callout-icon">💰</div>
       <div class="callout-content">
-        <div class="callout-title">Contexto de la negociación</div>
-        <div class="callout-body">OCN levantó $236M en dos rondas (2024-2025). Están en modo escala agresiva. El rol de Growth Director es crítico — tienen el capital, necesitan el talento. <strong>Quien habla primero de un número, ancla la negociación</strong> — dejar que Sergio diga el rango primero.</div>
+        <div class="callout-title">Sergio cubre esto en la sesión</div>
+        <div class="callout-body">La estructura de salario, variable y package Sergio la explica. Tu trabajo en comp es <strong>escuchar primero</strong> — quien habla primero de un número, ancla la negociación. Dos preguntas que vale hacer antes de que él empiece:</div>
       </div>
     </div>
 
-    <div class="comp-q">
-      <div class="q-text">¿Cuál es la estructura del package — base fija, variable por target, y hay equity (ESOP)?</div>
-      <div class="q-why" style="color:var(--sub);">Entender la estructura antes del número. Un base moderado con equity en empresa que levantó $236M y va hacia Serie C puede valer más que un base alto sin upside.</div>
+    <div class="qc-item" style="border-left-color:var(--purple);">
+      <div class="qc-num" style="color:#e9d5ff;">1</div>
+      <div class="qc-body">
+        <div class="qc-q">¿El rol incluye participación en el equity de la empresa?</div>
+        <div class="qc-why">OCN levantó $236M. Si van hacia Serie C, tener opciones sobre acciones hoy puede valer mucho. <strong>Equity = opciones para comprar acciones de OCN a un precio fijo</strong>: si la empresa vale más cuando las ejerces, la diferencia es tuya. Si no hay equity, el base fijo tiene que compensar.</div>
+      </div>
     </div>
 
-    <div class="comp-q">
-      <div class="q-text">¿El variable está ligado a entregas mensuales, conversión del funnel, o directamente a la meta de 15,000 vehículos al cierre del año?</div>
-      <div class="q-why" style="color:var(--sub);">La meta es ambiciosa (500 → 1,000+ entregas/mes). Si el variable está atado a esa meta y el análisis del CSV muestra que los cuellos son corregibles, el upside del variable es real. Si está atado a una métrica que Ricardo no controla directamente, es un riesgo.</div>
-    </div>
-
-    <div class="comp-q">
-      <div class="q-text">Si hay ESOP — ¿a qué valoración de la empresa está el precio de strike?</div>
-      <div class="q-why" style="color:var(--sub);">Si se levanta una Serie C en el próximo año, el precio de strike actual define si las opciones son valiosas o underwater. Es la diferencia entre equity real y papel.</div>
-    </div>
-
-    <div class="comp-q">
-      <div class="q-text">¿Cuándo esperan tomar la decisión después del panel del lunes/martes?</div>
-      <div class="q-why" style="color:var(--sub);">Define el timeline y la urgencia del seguimiento post-panel. Si la decisión es en 2-3 días, hay que ir al panel con todo resuelto y seguimiento el mismo día.</div>
+    <div class="qc-item" style="border-left-color:var(--purple);">
+      <div class="qc-num" style="color:#e9d5ff;">2</div>
+      <div class="qc-body">
+        <div class="qc-q">¿Cuándo esperan tomar la decisión después del panel?</div>
+        <div class="qc-why">Si la decisión es en 2-3 días, el seguimiento va el mismo día del panel. Si es en 2 semanas, tienes espacio para enviar algo adicional.</div>
+      </div>
     </div>
 
   </div>
